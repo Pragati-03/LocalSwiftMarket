@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Local Swift Market</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <style>
+         .header {
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   background-color: #333;
+   color: white;
+   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+          .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+   }
+   .footer a {
+      color: #ff6600;
+      text-decoration: none;
+   }
+   .footer a:hover {
+      text-decoration: underline;
+   }
+   .footer .inror_box h3 {
+      font-size: 18px;
+      color: #ff6600;
+   }
+         .news_img img {
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+         }
+         .news_img img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+         }
+         .date_like {
+            margin-top: 10px;
+            font-size: 14px;
+         }
+         .date_like span {
+            margin-right: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+         }
+         .date_like span:hover {
+            color: #ff6600;
+         }
+         .news_img img {
+   width: 100%;
+   height: auto;
+   max-height: 300px; /* Optional for consistent size */
+   object-fit: cover;
+}
+.loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #ccc;
+      border-top: 5px solid #ff6600;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+   }
+   @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+   }
+
+   </style> 
+   </head>
+   <!-- body -->
+   <body class="main-layout footer_to90 news_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      </div>
+      <header>
+            <div class="header">
+               <div class="header_bottom">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                           <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarsExample04">
+                                 <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                       <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="about.html">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="products.html">Products</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="fashion.html">Fashion</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="news.html">Updates</a>
+                                    </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="contact.html">Contact-Us</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </nav>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="search">
+                              <form action="/action_page.php">
+                                 <input class="form_sea" type="text" placeholder="Search" name="search">
+                                 <button type="submit" class="seach_icon"><i class="fa fa-search"></i></button>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>      
+      </header>
+      <div class="blue_bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2><b>Updates !!</b></h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- news section -->
+      <div class="news">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 margin_top40">
+                  <div class="row d_flex">
+                     <div class="col-md-5">
+                        <div class="news_img">
+                           <figure><img src="images/Instore.png" style="width:800px; height:300px"></figure>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="news_text">
+                           <h3>In-Store Pickup
+                           </h3>
+                           <span>7 October 2023</span> 
+                           <div class="date_like">
+                              <span>Like </span><span class="pad_le">Comment</span>
+                           </div>
+                           <p>We will be adding feature which allows customers to order online and pick up their purchases at the physical store.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 margin_top40">
+                  <div class="row d_flex">
+                     <div class="col-md-5">
+                        <div class="news_img">
+                           <figure><img src="images/Virtualtry.jpg"></figure>
+                        </div>
+                     </div>
+                     <div class="col-md-7">
+                        <div class="news_text">
+                           <h3>Virtual Try-On or Sizing Tools</h3>
+                           <span>6 October 2023</span> 
+                           <div class="date_like">
+                              <span>Like </span><span class="pad_le">Comment</span>
+                           </div>
+                           <p>Provide tools that allow customers to virtually try on clothing or visualize how products might look.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 margin_top40">
+                  <div class="row d_flex">
+                     <div class="col-md-5">
+                        <div class="news_img">
+                           <figure><img src="images/Chatbot.jpg"></figure>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="news_text">
+                           <h3>Chatbots and AI Assistants
+                           </h3>
+                           <span>7 October 2023</span> 
+                           <div class="date_like">
+                              <span>Like </span><span class="pad_le">Comment</span>
+                           </div>
+                           <p>Use chatbots for handling routine customer queries and assisting with the shopping process.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 margin_top40">
+                  <div class="row d_flex">
+                     <div class="col-md-5">
+                        <div class="news_img">
+                           <figure><img src="images/Review&rating.png"></figure>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="news_text">
+                           <h3>Reviews and Ratings
+                           </h3>
+                           <span>7 October 2023</span> 
+                           <div class="date_like">
+                              <span>Like </span><span class="pad_le">Comment</span>
+                           </div>
+                           <p>Allow vendors access to customer reviews and ratings for their products and respond to customer feedback.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 margin_top40">
+                  <div class="row d_flex">
+                     <div class="col-md-5">
+                        <div class="news_img">
+                           <figure><img src="images/DataSecurity.jpeg"></figure>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="news_text">
+                           <h3>Data Security
+                           </h3>
+                           <span>7 October 2023</span> 
+                           <div class="date_like">
+                              <span>Like </span><span class="pad_le">Comment</span>
+                           </div>
+                           <p>Ensure robust data security measures to protect vendor and customer information.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 margin_top40">
+                  <div class="row d_flex">
+                     <div class="col-md-5">
+                        <div class="news_img">
+                           <figure><img src="images/multi-lingual-support.png"></figure>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="news_text">
+                           <h3>Multi-Language Support
+                           </h3>
+                           <span>7 October 2023</span> 
+                           <div class="date_like">
+                              <span>Like </span><span class="pad_le">Comment</span>
+                           </div>
+                           <p>Ensure the platform supports multiple languages to cater to a diverse customer base.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end news section -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-3">
+                     <div class="inror_box">
+                        <h3>INFORMATION </h3>
+                        <p>At Local Swift Market, we're on a mission to redefine the unparalleled online shopping experience from locals. We understand that shopping is an essential part of your life, and we're here to make it easier, more convenient, and enjoyable for you. </p>
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="inror_box">
+                        <h3>MY ACCOUNT </h3>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="inror_box">
+                        <h3>ABOUT  </h3>
+                        <p>Welcome to Local Swift Market, your one-stop destination for an extraordinary online shopping experience. Founded on a passion for empowering local vendors, delivering quality products, convenience, and unbeatable customer service, we've become your go-to online marketplace for all your shopping needs.</p>
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="inror_box">
+                        <h3>CONTACTS  </h3>
+                        <p>Feel free to reach out to us via:
+
+                           Phone: Call us at <a href="#" >98971 XXX</a> for immediate assistance.<br>
+                           Email: Send us an email at <a href="#">demo@gmail.com</a> .<br>
+                           Contact Form: Fill out our online contact form on <a class="nav-link"href="Contact.html">our Contact Us page</a>,and we'll respond to your message promptly.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2023 All Rights Reserved.</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
+

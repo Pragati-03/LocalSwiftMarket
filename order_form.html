@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="stylesO.css">
+    <style>
+        /* Global Styling */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.order-form-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: linear-gradient(to right, #f8f9fa, #dbe2e8);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+h2 {
+    color: #2f2f2f;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #5e5e5e;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #e1e1e1;
+    background-color: #fff;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-check {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-check input {
+    margin-right: 10px;
+}
+
+.submit-btn {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #357ABD;
+}
+
+@media (max-width: 768px) {
+    .order-form-container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 25px;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.order-form-container {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+    <div class="order-form-container">
+        <h2><b>Complete Your Order Details</b></h2>
+        <form action="submit_order.php" method="post">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="pin">PIN Code:</label>
+                <input type="text" id="pin" name="pin" placeholder="Enter your PIN" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number:</label>
+                <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="billing-address">Billing Address:</label>
+                <textarea id="billing-address" name="billing-address" placeholder="Enter your billing address" required></textarea>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" id="same-address" name="same-address">
+                <label for="same-address">Shipping Address Same as Billing Address</label>
+            </div>
+
+            <div id="shipping-address-div" class="form-group" style="display: none;">
+                <label for="shipping-address">Shipping Address:</label>
+                <textarea id="shipping-address" name="shipping-address" placeholder="Enter shipping address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="special-instructions">Special Instructions:</label>
+                <textarea id="special-instructions" name="special-instructions" placeholder="Any special instructions?"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payment">Select Payment Method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="paypal">UPI</option>
+                    <option value="creditcard">Credit Card</option>
+                    <option value="banktransfer">Net Banking</option>
+                    <option value="banktransfer">Debit Card</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        const sameAddressCheckbox = document.getElementById('same-address');
+        const shippingAddressDiv = document.getElementById('shipping-address-div');
+
+        sameAddressCheckbox.addEventListener('change', function () {
+            if (sameAddressCheckbox.checked) {
+                shippingAddressDiv.style.display = 'none';
+            } else {
+                shippingAddressDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* Apply styles to the form container */
+.order-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Style the form headings */
+.order-form h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style form labels */
+.order-form label {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Style form input and textarea fields */
+.order-form input[type="text"],
+.order-form input[type="email"],
+.order-form input[type="checkbox"],
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Style the "Shipping Address Same as Billing Address" checkbox */
+.order-form input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+/* Style the shipping address fields when the checkbox is checked */
+.order-form #shipping-address-div {
+    display: none;
+}
+
+/* Style the "Place Order" button */
+.order-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Add some spacing between form elements */
+.order-form label,
+.order-form input,
+.order-form textarea,
+.order-form select {
+    margin-top: 10px;
+}
+
+/* Add a background color and padding for the form when it's focused or hovered */
+.order-form input[type="text"]:focus,
+.order-form input[type="email"]:focus,
+.order-form input[type="checkbox"]:hover,
+.order-form textarea:focus,
+.order-form select:focus {
+    background-color: #fff;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+/* Style the form to make it responsive on smaller screens */
+@media (max-width: 768px) {
+    .order-form {
+        width: 90%;
+    }
+}
